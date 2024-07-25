@@ -6,82 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Operadores de Transporte</title>
     <link rel="stylesheet" href="./src/output.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <style>
-        .typing::after {
-            content: '|';
-            animation: blink 0.7s infinite;
-        }
-
-        @keyframes blink {
-
-            0%,
-            50% {
-                opacity: 1;
-            }
-
-            51%,
-            100% {
-                opacity: 0;
-            }
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .icon {
-            width: 100px;
-            height: 100px;
-            cursor: pointer;
-            transition: transform 0.2s;
-        }
-
-        .icon:hover {
-            transform: scale(1.1);
-        }
-
-        .moving-image {
-            animation: moveUpDown 2s ease-in-out infinite;
-        }
-
-        @keyframes moveUpDown {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-    </style>
 </head>
 
 <body class="bg-gray-100 text-gray-800">
 
     <header class="bg-blue-600 text-white p-6">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-3xl font-bold" data-aos="fade-down"
-                data-aos-anchor-placement="bottom-bottom">Operadores de Transporte</a>
+            <a href="#" class="text-3xl font-bold">Operadores de Transporte</a>
             <nav>
                 <ul class=" hidden sm:flex space-x-4">
                     <li><a href="#introducao" class="hover:text-gray-300">Introdução</a></li>
                     <li><a href="#tipos" class="hover:text-gray-300">Tipos de Transporte</a></li>
-                    <li><a href="#contato" class="hover:text-gray-300">A Equipe</a></li>
+                    <li><a href="#equipe" class="hover:text-gray-300">A Equipe</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="introducao" class="bg-blue-500 text-white py-20" data-aos="zoom-in"
-        data-aos-anchor-placement="bottom-bottom">
+    <section id="introducao" class="bg-blue-500 text-white py-20">
         <div class="container mx-auto text-center">
             <h2 class="text-4xl font-bold">O que são Operadores de Transporte?</h2>
             <p class="mt-4 text-xl max-w-2xl mx-auto">
@@ -94,41 +37,47 @@
 
     <section id="tipos" class="py-20">
         <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold" data-aos="fade-up">Tipos de Transporte Utilizados</h2>
+            <h2 class="text-3xl font-bold">Tipos de Transporte Utilizados</h2>
             <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg shadow-lg p-4" data-aos="flip-up">
+                <div class="bg-white rounded-lg shadow-lg p-4">
                     <img src="./src/img/truck-logistics-operations-dusk.jpg" alt="Transporte Terrestre"
                         class="w-full h-48 object-cover rounded">
                     <h3 class="mt-4 text-2xl font-bold">Transporte Terrestre</h3>
                     <p class="mt-2 text-lg">Inclui transporte rodoviário e ferroviário, abrangendo caminhões, ônibus,
                         trens, etc.</p>
                 </div>
-                <div class="bg-white rounded-lg shadow-lg p-4" data-aos="flip-up">
+                <div class="bg-white rounded-lg shadow-lg p-4">
                     <img src="./src/img/airplane-track-front-view-generative-ai.jpg" alt="Transporte Aéreo"
                         class="w-full h-48 object-cover rounded">
                     <h3 class="mt-4 text-2xl font-bold">Transporte Aéreo</h3>
                     <p class="mt-2 text-lg">Aviões e helicópteros que permitem o transporte rápido e eficiente a longas
                         distâncias.</p>
                 </div>
-                <div class="bg-white rounded-lg shadow-lg p-4" data-aos="flip-up">
+                <div class="bg-white rounded-lg shadow-lg p-4">
                     <img src="./src/img/industrial-port-de-barcelona.jpg" alt="Transporte Marítimo"
                         class="w-full h-48 object-cover rounded">
                     <h3 class="mt-4 text-2xl font-bold">Transporte Marítimo</h3>
                     <p class="mt-2 text-lg">Navios e embarcações que transportam cargas e passageiros por via marítima.
                     </p>
                 </div>
-                <div class="bg-white rounded-lg shadow-lg p-4" data-aos="flip-up">
+                <div class="bg-white rounded-lg shadow-lg p-4">
                     <img src="./src/img/transporte-fluvial.png" alt="Transporte Fluvial"
                         class="w-full h-48 object-cover rounded">
                     <h3 class="mt-4 text-2xl font-bold">Transporte Fluvial</h3>
                     <p class="mt-2 text-lg">Embarcações que navegam por rios e canais, transportando mercadorias e
                         pessoas.</p>
                 </div>
-                <div class="bg-white rounded-lg shadow-lg p-4" data-aos="flip-up">
+                <div class="bg-white rounded-lg shadow-lg p-4">
                     <img src="./src/img/ONIBUS-INTEGRA-SALVADOR-p4zq8wlu44dnc7bp91jnqkcffxaowo5uiba2h3a0om.jpg"
                         alt="Transporte Urbano" class="w-full h-48 object-cover rounded">
                     <h3 class="mt-4 text-2xl font-bold">Transporte Urbano</h3>
                     <p class="mt-2 text-lg">Sistemas de transporte público como metrôs, ônibus urbanos e trólebus.</p>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-4">
+                    <img src="./src/img/shipping-worker-looking-train-coming-station-organizing-goods-distribution-export.jpg"
+                        alt="Transporte Urbano" class="w-full h-48 object-cover rounded">
+                    <h3 class="mt-4 text-2xl font-bold">Transporte Ferroviário</h3>
+                    <p class="mt-2 text-lg">Trens de passageiros, trens de carga e trens de alta velocidade.</p>
                 </div>
             </div>
         </div>
@@ -136,10 +85,10 @@
 
     <section id="equipe" class="py-20 bg-gray-200">
         <div class="container mx-auto text-center">
-            <h2 class="text-3xl font-bold" data-aos="fade-up">A Equipe</h2>
-            <p class="mt-4 text-lg" data-aos="fade-up">Conheça os membros da nossa equipe dedicada.</p>
+            <h2 class="text-3xl font-bold">A Equipe</h2>
+            <p class="mt-4 text-lg">Conheça os membros da nossa equipe dedicada.</p>
             <div class="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="team-member border rounded-lg shadow-lg p-4" data-aos="flip-left">
+                <div class="team-member border rounded-lg shadow-lg p-4">
                     <img src="./src/img/angel.jpeg" alt="Angel Santana"
                         class="w-full h-48 object-cover rounded-full mx-auto">
                     <h3 class="mt-4 text-2xl font-bold">Angel <span class="text-green-600">Sant<span
@@ -151,7 +100,7 @@
                         tecnologica
                         geral do trabalho</p>
                 </div>
-                <div class="team-member border rounded-lg shadow-lg p-4" data-aos="flip-left">
+                <div class="team-member border rounded-lg shadow-lg p-4">
                     <img src="./src/img/Yasmin.jpeg" alt="Yasmin copque"
                         class="w-full h-48 object-cover rounded-full mx-auto">
                     <h3 class="mt-4 text-2xl font-bold">Yasmin <span class="text-yasmin-red
@@ -160,7 +109,7 @@
                     <p class="mt-2 text-lg">Responsavel pela coleta de materiais para realização da maquete e tambem
                         pela criação da maquete</p>
                 </div>
-                <div class="team-member border rounded-lg shadow-lg p-4" data-aos="flip-left">
+                <div class="team-member border rounded-lg shadow-lg p-4">
                     <img src="./src/img/Davi Rian.png" alt="Davi" class="w-full h-48 object-cover rounded-full mx-auto">
                     <h3 class="mt-4 text-2xl font-bold">Davi <span class="text-[#65ab75]">Rian</span></h3>
                     <p class="mt-2 text-lg">Estudante de informatica e estudante autônomo de comportamento humano e
@@ -168,36 +117,33 @@
                     <p class="mt-2 text-lg">Responsavel por organizar o funcionamento da apresentação, textos, e
                         organização de grupo.</p>
                 </div>
-                <div class="team-member border rounded-lg shadow-lg p-4" data-aos="flip-left">
+                <div class="team-member border rounded-lg shadow-lg p-4">
                     <img src="./src/img/Ester.jpeg" alt="Ester" class="w-full h-48 object-cover rounded-full mx-auto">
                     <h3 class="mt-4 text-2xl font-bold">Ester <span class="text-gray-500">Suelen</h3>
                     <p class="mt-2 text-lg">Estudante de logística e desenhista</p>
                     <p class="mt-2 text-lg">Responsavel pela coleta de materiais para realização da maquete e tambem
                         pela criação da maquete</p>
                 </div>
-                <div class="team-member border rounded-lg shadow-lg p-4" data-aos="flip-left">
+                <div class="team-member border rounded-lg shadow-lg p-4">
                     <img src="./src/img/airton.png" alt="airton" class="w-full h-48 object-cover rounded-full mx-auto">
                     <h3 class="mt-4 text-2xl font-bold">Airton <span class="text-orange-600">Neto</h3>
                     <p class="mt-2 text-lg">Estudante de logística e jogador</p>
                     <p class="mt-2 text-lg">Responsavel pela coleta de materiais para realização da maquete.</p>
                 </div>
-                <div class="team-member border rounded-lg shadow-lg p-4" data-aos="flip-left">
+                <div class="team-member border rounded-lg shadow-lg p-4">
                     <img src="./src/img/joão pedro.jpeg" alt="Jõao Pedro"
                         class="w-full h-48 object-cover rounded-full mx-auto">
                     <h3 class="mt-4 text-2xl font-bold">João <span class="text-green-400">Pedro</h3>
                     <p class="mt-2 text-lg">Estudante de logística</p>
                     <p class="mt-2 text-lg">Responsavel pela coleta de materiais para realização da maquete</p>
                 </div>
-                <div class="team-member border rounded-lg shadow-lg p-4 opacity-40" data-aos="flip-left">
-                    <img src="https://placehold.co/400x400" alt="Jõao Pedro"
+                <div class="team-member border rounded-lg shadow-lg p-4">
+                    <img src="./src/img/ian.jpeg" alt="Ian Gabriel"
                         class="w-full h-48 object-cover rounded-full mx-auto">
-                    <h3 class="mt-4 text-2xl font-bold">Seção <span class="text-gray-600">Ian</h3>
+                    <h3 class="mt-4 text-2xl font-bold">Ian <span class="text-yasmin-red">Gabriel</span></h3>
                     <p class="mt-2 text-lg">Estudante de logística</p>
                     <p class="mt-2 text-lg">Responsavel pela coleta de materiais para realização da maquete</p>
                 </div>
-
-
-                <!-- Adicione mais membros conforme necessário -->
             </div>
         </div>
     </section>
@@ -206,11 +152,6 @@
     <footer class="text-center py-10 bg-gray-800 text-white">
         <p>&copy; 2024 Angel Santana 1°log(d). Todos os direitos reservados.</p>
     </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        AOS.init();
-    </script>
 </body>
 
 </html>
