@@ -9,11 +9,140 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 
+<style>
+    #descricao {
+        position: relative;
+        overflow: hidden;
+    }
+
+    #descricao::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: url(./src/img/many-transport-trucks-parked-service-station-sunset-ai-generative.jpg);
+        background-size: cover;
+        background-position: center;
+    }
+
+    #texto {
+        position: relative;
+        background-color: rgba(255, 255, 255, 0.8);
+        /* Fundo branco semi-transparente */
+        padding: 2rem;
+        border-radius: 0.5rem;
+        font-size: larger;
+    }
+
+    @keyframes wave {
+        0% {
+            background-position: 200% center;
+        }
+
+        100% {
+            background-position: -200% center;
+        }
+    }
+
+    .wave-text {
+        display: inline-block;
+        background: linear-gradient(90deg, #402E7A, #4C3BCF, #4B70F5, #3DC2EC);
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: wave 3s infinite linear;
+    }
+
+    .text-wave-once {
+        display: inline-block;
+        background: linear-gradient(90deg, #d16ba5, #8e44ad, #d16ba5);
+        background-size: 200% 200%;
+        -webkit-background-clip: text;
+        color: transparent;
+        animation: wave-once 3s linear forwards;
+    }
+
+    @keyframes wave-once {
+        0% {
+            background-position: 200% center;
+        }
+
+        100% {
+            background-position: -200% center;
+        }
+    }
+
+    .fade-out {
+        opacity: 0;
+        transition: opacity 1s ease-in-out;
+    }
+
+    .fade-in {
+        opacity: 1;
+        transition: opacity 1s ease-in-out;
+    }
+
+    .yan-name {
+        color: #523362;
+    }
+
+    button {
+        outline: none;
+        cursor: pointer;
+        border: none;
+        padding: 0.9rem 2rem;
+        margin: 0;
+        font-family: inherit;
+        font-size: inherit;
+        position: relative;
+        display: inline-block;
+        letter-spacing: 0.05rem;
+        font-weight: 700;
+        font-size: 17px;
+        border-radius: 500px;
+        overflow: hidden;
+        background: #66ff66;
+        color: ghostwhite;
+    }
+
+    button span {
+        position: relative;
+        z-index: 10;
+        transition: color 0.4s;
+    }
+
+    button:hover span {
+        color: black;
+    }
+
+    button::before,
+    button::after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+    }
+
+    button::before {
+        content: "";
+        background: #000;
+        width: 120%;
+        left: -10%;
+        transform: skew(30deg);
+        transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+    }
+
+    button:hover::before {
+        transform: translate3d(100%, 0, 0);
+    }
+</style>
+
 <body class="bg-gray-100 text-gray-800">
 
     <header class="bg-blue-600 text-white p-6">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="#" class="text-3xl font-bold">Operadores de Transporte</a>
+            <a href="#" class="text-2xl font-bold">Operadores de Transporte</a>
             <nav>
                 <ul class=" hidden sm:flex space-x-4">
                     <li><a href="#introducao" class="hover:text-gray-300">Introdução</a></li>
@@ -83,6 +212,8 @@
         </div>
     </section>
 
+
+
     <section id="equipe" class="py-20 bg-gray-200">
         <div class="container mx-auto text-center">
             <h2 class="text-3xl font-bold">A Equipe</h2>
@@ -91,27 +222,27 @@
                 <div class="team-member border rounded-lg shadow-lg p-4">
                     <img src="./src/img/angel.jpeg" alt="Angel Santana"
                         class="w-full h-48 object-cover rounded-full mx-auto">
-                    <h3 class="mt-4 text-2xl font-bold">Angel <span class="text-green-600">Sant<span
-                                class="text-fuchsia-700">ana</span></span></h3>
+                    <h3 class="mt-4 text-2xl font-bold wave-text">
+                        Angel Santana
+                    </h3>
                     <p class="mt-2 text-lg">Estudante de logística e desenvolvimento de software e front-end certificado
-                        pela
-                        USP(universidade de são paulo)</p>
-                    <p class="mt-2 text-lg">Responsavel pelos banners, website, ideias, e desenvolvimento da parte
-                        tecnologica
-                        geral do trabalho</p>
+                        pela USP (Universidade de São Paulo)</p>
+                    <p class="mt-2 text-lg">Responsável pelos banners, website, ideias e desenvolvimento da parte
+                        tecnológica geral do trabalho</p>
                 </div>
+
                 <div class="team-member border rounded-lg shadow-lg p-4">
                     <img src="./src/img/Yasmin.jpeg" alt="Yasmin copque"
                         class="w-full h-48 object-cover rounded-full mx-auto">
                     <h3 class="mt-4 text-2xl font-bold">Yasmin <span class="text-yasmin-red
-                        ">Copque</span></h3>
+                        ">Copque</span> ☄️</h3>
                     <p class="mt-2 text-lg">Artesã e estudante autônoma de astronomia e logística</p>
                     <p class="mt-2 text-lg">Responsavel pela coleta de materiais para realização da maquete e tambem
                         pela criação da maquete</p>
                 </div>
                 <div class="team-member border rounded-lg shadow-lg p-4">
                     <img src="./src/img/Davi Rian.png" alt="Davi" class="w-full h-48 object-cover rounded-full mx-auto">
-                    <h3 class="mt-4 text-2xl font-bold">Davi <span class="text-[#65ab75]">Rian</span></h3>
+                    <h3 class="mt-4 text-2xl font-bold">Davi <span class="text-[#65ab75]">Rian</span> 🍃</h3>
                     <p class="mt-2 text-lg">Estudante de informatica e estudante autônomo de comportamento humano e
                         logística</p>
                     <p class="mt-2 text-lg">Responsavel por organizar o funcionamento da apresentação, textos, e
@@ -119,28 +250,28 @@
                 </div>
                 <div class="team-member border rounded-lg shadow-lg p-4">
                     <img src="./src/img/Ester.jpeg" alt="Ester" class="w-full h-48 object-cover rounded-full mx-auto">
-                    <h3 class="mt-4 text-2xl font-bold">Ester <span class="text-gray-500">Suelen</h3>
+                    <h3 class="mt-4 text-2xl font-bold">Ester <span class="text-gray-500">Suelen</span> 🏝️</h3>
                     <p class="mt-2 text-lg">Estudante de logística e desenhista</p>
                     <p class="mt-2 text-lg">Responsavel pela coleta de materiais para realização da maquete e tambem
                         pela criação da maquete</p>
                 </div>
                 <div class="team-member border rounded-lg shadow-lg p-4">
-                    <img src="./src/img/airton.png" alt="airton" class="w-full h-48 object-cover rounded-full mx-auto">
-                    <h3 class="mt-4 text-2xl font-bold">Airton <span class="text-orange-600">Neto</h3>
+                    <img src="./src/img/Airton.png" alt="airton" class="w-full h-48 object-cover rounded-full mx-auto">
+                    <h3 class="mt-4 text-2xl font-bold">Airton <span class="text-orange-600">Neto</span>⚽</h3>
                     <p class="mt-2 text-lg">Estudante de logística e jogador</p>
                     <p class="mt-2 text-lg">Responsavel pela coleta de materiais para realização da maquete.</p>
                 </div>
                 <div class="team-member border rounded-lg shadow-lg p-4">
                     <img src="./src/img/joão pedro.jpeg" alt="Jõao Pedro"
                         class="w-full h-48 object-cover rounded-full mx-auto">
-                    <h3 class="mt-4 text-2xl font-bold">João <span class="text-green-400">Pedro</h3>
+                    <h3 class="mt-4 text-2xl font-bold">João <span class="text-green-400">Pedro </span> 🐉</h3>
                     <p class="mt-2 text-lg">Estudante de logística</p>
                     <p class="mt-2 text-lg">Responsavel pela coleta de materiais para realização da maquete</p>
                 </div>
                 <div class="team-member border rounded-lg shadow-lg p-4">
                     <img src="./src/img/ian.jpeg" alt="Ian Gabriel"
                         class="w-full h-48 object-cover rounded-full mx-auto">
-                    <h3 class="mt-4 text-2xl font-bold">Ian <span class="text-yasmin-red">Gabriel</span></h3>
+                    <h3 class="mt-4 text-2xl font-bold">Yan <span class="yan-name">Gabriel</span> 🎮</h3>
                     <p class="mt-2 text-lg">Estudante de logística</p>
                     <p class="mt-2 text-lg">Responsavel pela coleta de materiais para realização da maquete</p>
                 </div>
@@ -149,9 +280,51 @@
     </section>
 
 
+    <section id="descricao" class="py-20 bg-transport text-green-500">
+        <div id="texto" class="container mx-auto text-center text-3xla">
+            <h2 class="text-3xl font-bold">Descrição do Cargo</h2>
+            <p class="mt-4 text-2xl max-w-2xl mx-auto">
+                O operador de transporte é uma peça fundamental na logística de qualquer empresa. Suas principais
+                responsabilidades incluem o planejamento, a coordenação e a execução de atividades relacionadas à
+                movimentação de bens e pessoas. Ele deve garantir que todas as operações logísticas sejam realizadas de
+                maneira eficiente, segura e dentro do prazo estabelecido. Isso envolve desde a definição das rotas mais
+                adequadas até a escolha dos modos de transporte mais eficientes, sejam eles rodoviários, ferroviários,
+                aéreos ou marítimos.
+            </p>
+            <p class="mt-4 text-2xl max-w-2xl mx-auto">
+
+                Além disso, o operador de transporte precisa monitorar constantemente as operações, solucionando
+                problemas que possam surgir e assegurando a conformidade com as normas de segurança e regulamentações do
+                setor. Ele também deve gerenciar a documentação necessária para o transporte, como notas fiscais, guias
+                de transporte e certificados de segurança. A comunicação eficaz com motoristas, fornecedores e clientes
+                é essencial para garantir que todas as partes envolvidas estejam alinhadas e que as entregas ocorram sem
+                contratempos.
+            </p>
+            <p class="mt-4 text-2xl max-w-2xl mx-auto">
+                O operador de transporte também tem a função de otimizar os custos de transporte, buscando soluções que
+                reduzam despesas sem comprometer a qualidade do serviço. Isso pode incluir a negociação com
+                fornecedores, a gestão da manutenção de veículos e a implementação de tecnologias que melhorem a
+                eficiência operacional. Em empresas maiores, ele pode ainda coordenar uma equipe de motoristas e
+                assistentes, sendo responsável pela formação e pelo desenvolvimento desses profissionais.
+            </p>
+        </div>
+    </section>
+
+
+
+
     <footer class="text-center py-10 bg-gray-800 text-white">
         <p>&copy; 2024 Angel Santana 1°log(d). Todos os direitos reservados.</p>
+        <h3 class="text-xl">
+            <a href="https://wa.link/3nkbst"> Precisando realizar um trabalho de informática mas não
+                tem como fazer?
+                Entre em contato
+                comigo! <button id="whatsapp"> <span>Clique Aqui</span>
+                </button></a>
+        </h3>
+
     </footer>
+    <script src="./src/"></script>
 </body>
 
 </html>
