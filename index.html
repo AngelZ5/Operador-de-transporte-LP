@@ -147,16 +147,51 @@
     button:hover::before {
         transform: translate3d(100%, 0, 0);
     }
+
+    #loading {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        background: rgba(255, 255, 255, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        pointer-events: none;
+    }
+
+    .spinner {
+        border: 8px solid #f3f3f3;
+        border-top: 8px solid #3498db;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
+    }
 </style>
 
 <body class="bg-gray-100 text-gray-800">
+    <div id="loading">
+        <div class="spinner"></div>
+    </div>
+
 
     <header class="bg-blue-600 text-white p-6">
         <div class="container mx-auto flex justify-between items-center">
             <a href="#" class="text-2xl font-bold">Operadores de Transporte</a>
             <nav>
                 <ul class=" hidden sm:flex space-x-4">
-                    <li><a href="#introducao" class="hover:text-gray-300">Introdução</a></li>
+                    <li><a href="#salario" class="hover:text-gray-300">Media Salarial</a></li>
                     <li><a href="#tipos" class="hover:text-gray-300">Tipos de Transporte</a></li>
                     <li><a href="#equipe" class="hover:text-gray-300">A Equipe</a></li>
                 </ul>
@@ -164,14 +199,16 @@
         </div>
     </header>
 
-    <section id="introducao" class="bg-blue-500 text-white py-20">
+    <section id="salario" class="bg-blue-500 text-black py-20 flex justify-center">
         <div class="container mx-auto text-center">
-            <h2 class="text-4xl font-bold">O que são Operadores de Transporte?</h2>
-            <p class="mt-4 text-xl max-w-2xl mx-auto">
-                Operadores de transporte são responsáveis pela movimentação de bens e pessoas de um local para outro.
-                Eles garantem que as operações logísticas sejam realizadas de maneira eficiente e segura, utilizando
-                diferentes modos de transporte.
+            <h3 class="text-2xl font-bold">Média Salarial do Operador de Serviço Logístico</h3>
+            <p class="mt-2 text-xl max-w-2xl mx-auto">Início: R$ 1.266,00 | Média: R$ 1.534,00 | "Máximo": R$
+                2.024,00
             </p>
+            <p class="mt-2 text-xl max-w-2xl mx-auto">O salário pode variar dependendo da empresa e do tipo de
+                transporte realizado.</p>
+            <canvas id="salarioChart" class="mx-auto mt-4"></canvas>
+            <h2 class="text-4xl">Mais informações abaixo</h2>
         </div>
     </section>
 
@@ -257,16 +294,12 @@
                     fornecedores, a gestão da manutenção de veículos e a implementação de tecnologias que melhorem a
                     eficiência operacional. Em empresas maiores, ele pode ainda coordenar uma equipe de motoristas e
                     assistentes, sendo responsável pela formação e pelo desenvolvimento desses profissionais.
-                </p>
-                <aside id="salario" class="mt-10">
-                    <h3 class="text-2xl font-bold">Média Salarial do Operador de Serviço Logístico</h3>
-                    <p class="mt-2 text-xl max-w-2xl mx-auto">Início: R$ 1.266,00 | Média: R$ 1.534,00 | "Máximo": R$
-                        2.024,00
-                    </p>
-                    <p class="mt-2 text-xl max-w-2xl mx-auto">O salário pode variar dependendo da empresa e do tipo de
-                        transporte realizado.</p>
-                    <canvas id="salarioChart" class="mx-auto mt-4"></canvas>
-                </aside>
+                    // Wait for the window to load completely
+                    window.addEventListener('load', function () {
+                    // Hide the loading spinner
+                    var loadingSpinner = document.getElementById('loading');
+                    loadingSpinner.style.display = 'none';
+                    }); </p>
             </div>
 
 
@@ -356,16 +389,24 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
+
+        // Wait for the window to load completely
+        window.addEventListener('load', function () {
+            // Hide the loading spinner
+            var loadingSpinner = document.getElementById('loading');
+            loadingSpinner.style.display = 'none';
+        });
+
         const ctx = document.getElementById('salarioChart').getContext('2d');
         const salarioChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Início', 'Média', 'Máximo'],
+                labels: ['Início', 'Média', '"Máximo"'],
                 datasets: [{
                     label: 'Salário (R$)',
                     data: [1266, 1534, 2024],
                     backgroundColor: 'rgba(34, 197, 94, 0.2)',
-                    borderColor: 'rgba(34, 197, 94, 1)',
+                    borderColor: 'rgba()',
                     borderWidth: 1,
                     hoverBackgroundColor: 'rgba(34, 197, 94, 0.3)',
                     hoverBorderColor: 'rgba(34, 197, 94, 1)'
@@ -432,7 +473,7 @@
                         },
                         title: {
                             display: true,
-                            text: 'Nível',
+                            text: 'Grafico interativo',
                             color: '#2d3748',
                             font: {
                                 size: 16,
